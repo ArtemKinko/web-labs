@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Сравнение браузеров</title>
+        <style>
+            table, th, td {
+                text-align: center;
+                border: 1px solid black;
+            }
+            table {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <header style="text-align: center" >
+            <p><a name="top"></a></p>
+            <img src="../images/logo_with_title.png" alt="logo_with_title">
+            <h1>Конкуренция браузеров. Сравнение.</h1> <br>
+        </header>
+
+        <nav style="margin-left: 10%">
+            <h2>Навигация по сайту:</h2>
+            <ul>
+                <li><a href="main-page.html">Историческая справка</a></li>
+                <ul>
+                    <li><a href="main-page.html#web-history">История появления первых веб-браузеров</a></li>
+                    <li><a href="main-page.html#first_war">Первая война браузеров</a></li>
+                    <li><a href="main-page.html#second_war">Вторая война браузеров</a></li>
+                </ul>
+                <li><a href="comparison-page.html">Сравнение браузеров</a></li>
+                <ul>
+                    <li><a href="comparison-page.html#characteristics">Основные характеристики для сравнения</a></li>
+                    <li><a href="comparison-page.html#browsers_table">Таблица сравнения популярных браузеров</a></li>
+                    <li><a href="comparison-page.html#features">Важные функции при выборе браузера</a></li>
+                </ul>
+                <li><a href="sources-page.html">Использованные источники</a></li>
+            </ul>
+        </nav>
+
+        <main style="text-align: center">
+            <br><br>
+            <h2 id="characteristics">Основные характеристики для сравнения.</h2>
+            <section style="width: 80%; margin-left: 10%; text-align: justify">
+                <h3 style="text-align: center">Совместимость — HTML5test</h3>
+                <img style="display: block; margin-left: auto; margin-right: auto" src="../images/html5test.png" alt="HTML5Test Logo">
+                <p>Проверить все браузеры на совместимость со всеми сайтами в сети практически невозможно.
+                    Приблизительно понять, насколько браузер отвечает современным веб-стандартам, можно с
+                    помощью ресурса HTML5test. В его тесте браузер может набрать максимум 555 баллов.<br><br>
+
+                    Долгое время в этом рейтинге единолично лидировал Chrome. Однако теперь практически
+                    все альтернативные браузеры на его движке сравнялись по позициям. Отстает лишь Opera.
+                    Firefox, как мы помним, работает на собственном движке и в тесте отстает от конкурентов
+                    чуть более значительно:</p>
+            </section>
+
+            <section style="width: 80%; margin-left: 10%; text-align: justify">
+                <h3 style="text-align: center">Скорость работы — JetStream 2</h3>
+                <img style="display: block; margin-left: auto; margin-right: auto" src="../images/JetStream-Logo.png" alt="JetStream Logo">
+                <p>64 теста в пакете бенчмарка JetStream 2 собрали в самом сообществе разработчиков движка WebKit
+                    для стимулирования оптимизированных нововведений в нем. Он включает в себя много
+                    JavaScript-тестов и награждает браузеры, которые «быстро запускаются, быстро исполняют
+                    код и работают без сбоев».<br><br>
+
+                    Результаты этого теста стоит воспринимать с некоторой долей скепсиса в связи с тем,
+                    кто его разрабатывал. Firefox на альтернативном движке демонстрирует в нем не самый лучший
+                    результат и значительно отстает от конкурентов.</p>
+            </section>
+
+            <section style="width: 80%; margin-left: 10%; text-align: justify">
+                <h3 style="text-align: center">Оперативная память</h3>
+                <img width="50%" style="display: block; margin-left: auto; margin-right: auto" src="../images/chrome_and_ram.jpg" alt="Chrome eating ram">
+                <p>Для оценки объема оперативной памяти, который потребляет тот или иной браузер с десятком запущенных
+                    вкладок, использовалась «Песочница» в Windows 10. Объем оперативной памяти, который «Песочница»
+                    потребляет в состоянии покоя, отнимался от объема, который она использовала с тестовым браузером.
+                    Все браузеры работали в состоянии из коробки: только-только установлены.</p>
+            </section>
+
+            <section id="browsers_table" style="width: 80%; margin-left: 10%; text-align: justify">
+                <h2 style="text-align: center">Таблица сравнения наиболее популярных браузеров.</h2>
+                <table>
+                    <tr>
+                        <th colspan="5">Браузеры на основе Chromium</th>
+                    </tr>
+                    <tr>
+                        <td><b>Иконка браузера</b></td>
+                        <td><b>Название браузера</b></td>
+                        <td><b>Баллы совместимости (HTML5Test)</b></td>
+                        <td><b>Баллы скорости работы (JetStream 2)</b></td>
+                        <td><b>Оперативная память</b></td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 50px" src="../images/chrome_icon.png"></td>
+                        <td><i>Google Chrome</i></td>
+                        <td style="background-color: #d4ffd4"><b>528</b></td>
+                        <td>103.011</td>
+                        <td>1500 MB</td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 50px" src="../images/Yandex_Browser_logo.svg.png"></td>
+                        <td><i>Yandex Browser</i></td>
+                        <td style="background-color: #d4ffd4"><b>513</b></td>
+                        <td>103.011</td>
+                        <td>1500 MB</td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 50px" src="../images/microsoftedgenewlogo.jpg"></td>
+                        <td><i>Microsoft Edge</i></td>
+                        <td style="background-color: #d4ffd4"><b>492</b></td>
+                        <td>103.011</td>
+                        <td>1500 MB</td>
+                    </tr>
+
+
+                    <tr>
+                        <th colspan="5">Браузеры, построенные на других движках</th>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 50px" src="../images/vivaldi_icon.png"></td>
+                        <td><i>Vivaldi (Blink)</i></td>
+                        <td style="background-color: #d4ffd4"><b>523</b></td>
+                        <td>103.011</td>
+                        <td>1500 MB</td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 50px" src="../images/opera_icon.svg"></td>
+                        <td><i>Opera (Blink)</i></td>
+                        <td style="background-color: #d4ffd4"><b>518</b></td>
+                        <td>103.011</td>
+                        <td>1500 MB</td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 50px" src="../images/safari_icon.svg"></td>
+                        <td><i>Safari (WebKit)</i></td>
+                        <td style="background-color: #d4ffd4"><b>471</b></td>
+                        <td>103.011</td>
+                        <td>1500 MB</td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 50px" src="../images/firefox_icon.svg"></td>
+                        <td><i>Mozilla Firefox (Quantum)</i></td>
+                        <td style="background-color: #d4ffd4"><b>491</b></td>
+                        <td>103.011</td>
+                        <td>1500 MB</td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 50px" src="../images/waterfox_icon.png"></td>
+                        <td><i>Waterfox (Quantum)</i></td>
+                        <td style="background-color: #d4ffd4"><b>489</b></td>
+                        <td>103.011</td>
+                        <td>1500 MB</td>
+                    </tr>
+                </table><br>
+            </section>
+
+            <section id="features" style="width: 80%; margin-left: 10%; text-align: justify">
+                <h2 style="text-align: center">Важные функции при выборе браузера</h2>
+                <p>Устанавливая <i>Yandex Browser</i> стоит быть готовым к тому, что вместо одного вы получите три ярлыка.
+                    Один от браузера, второй — кнопка перехода на главную страницу российского поисковика, третий —
+                    от ассистента «Алисы». От последней можно избавиться, если в процессе установки снять одну галочку.
+                    Появление второго не предотвратишь. Остальные браузеры <b>устанавливаются без подвоха</b>.<br><br>
+
+                    <b>Стартовое окно</b> должно быть опрятным. У <i>Yandex, Opera и Edge</i> оно загрязняется различными
+                    новостными рекомендациями, но от них можно избавиться в настройках.</p>
+                <img width="50%" style="display: block; margin-left: auto; margin-right: auto" src="../images/yandex.png" alt="Yandex Browser">
+                <p>В <i>Opera, Vivaldi и Yandex</i> есть возможность <b>открепить окно воспроизводимого видео</b> и зафиксировать
+                    его поверх вкладок. У трех других браузеров по умолчанию такой фишки нет, лечится поиском и
+                    установкой расширений.<br><br>
+
+                    В браузерах <i>Yandex, Vivaldi и Opera</i> встроены <b>нативные блокировщики рекламы</b>. При этом блокировка
+                    рекламы в Yandex не работает. Протестировано на самых загаженных ресурсах наподобие TechRadar.
+                    Для остальных браузеров блокировщики необходимо устанавливать через расширения. Они иногда сбоят
+                    и частично пропускают рекламу. Блокировщики в Opera и Vivaldi работают лучше остальных, так как
+                    оптимизируют вид страницы, где была вырезана реклама, для удобного чтения.<br><br>
+
+                    В <i>Opera</i> есть <b>встроенный VPN</b>, что облегчает доступ к заблокированным по тем или иным причинам
+                    ресурсам. В России с 17 июня нативная поддержка VPN в Opera пропала из-за решения Роскомнадзора.
+                    Для остальных браузеров придется использовать сторонние сервисы либо расширения.<br><br>
+
+                    У всех браузеров есть возможность <b>синхронизации с мобильной версией</b>. В большинстве случаев
+                    это сводится к синхронизации закладок, некоторых настроек и истории посещений, информации для
+                    автозаполнения в формы на сайтах, паролей в зашифрованном виде, открытых вкладок. Из интересного
+                    в <i>Opera</i> есть функция <b>Flow</b>. Это своеобразное окно чата между вашими синхронизированными под одним
+                    аккаунтом но на разных устройствах браузерами. В этот чат можно сбрасывать ссылки, изображения,
+                    заметки или файлы.<br><br>
+                </p>
+            </section>
+        </main>
+    </body>
+</html>
