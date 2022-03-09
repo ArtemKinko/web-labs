@@ -11,6 +11,35 @@
             table {
                 width: 100%;
             }
+            footer {
+                background-color: rgb(192, 192, 192);
+            }
+
+            ul#lang_browsers li {
+                list-style: none;
+                padding-left: 30px;
+            }
+
+            li#chrome-list {background: url("../images/chrome-icon.svg") no-repeat 0 0;}
+            li#opera-list {background: url("../images/opera_icon.svg") no-repeat 0 0;}
+            li#edge-list {background: url("../icons/edge_icon.jpg") no-repeat 0 0;}
+            li#firefox-list {background: url("../icons/firefox_icon.svg") no-repeat 0 0;}
+            li#safari-list {background: url("../icons/safari_icon.svg") no-repeat -70px 0;}
+            li#yandex-list {background: url("../icons/yandex_icon.png") no-repeat 0 0;}
+            li#vivaldi-list {background: url("../icons/vivaldi_icon.png") no-repeat 0 0;}
+            li#novell-list {background: url("../icons/novell_icon.svg") no-repeat 0 0;}
+            li#xep-list {background: url("../icons/xep_icon.svg") no-repeat 0 0;}
+            li#bat-list {background: url("../icons/bat_icon.svg") no-repeat 0 0;}
+
+            tr:nth-child(odd) {
+                background-color: #d8fdd8;
+            }
+
+            tr:nth-child(even) {
+                background-color: #fdf0d8;
+            }
+
+
         </style>
     </head>
     <body>
@@ -77,11 +106,42 @@
                     Все браузеры работали в состоянии из коробки: только-только установлены.</p>
             </section>
 
+            <section id="browsers_list" style="width: 80%; margin-left: 10%; text-align: justify">
+                <h2 style="text-align: center">Языки, на которых написаны браузеры</h2>
+                <ul id="lang_browsers">
+                    <li>C++</li>
+                    <ul>
+                        <li id="chrome-list">Google Chrome (с апреля 2013)</li>
+                        <li id="opera-list">Opera 15+</li>
+                        <li id="edge-list">Microsoft Edge</li>
+                        <li id="firefox-list">Mozilla Firefox</li>
+                        <li id="safari-list">Safari</li>
+                        <li id="yandex-list">Yandex Browser</li>
+                        <li id="vivaldi-list">Vivaldi</li>
+                    </ul>
+
+                    <li>C</li>
+                    <ul>
+                        <li id="novell-list">Novell Evolution</li>
+                    </ul>
+
+                    <li>Java</li>
+                    <ul>
+                        <li id="xep-list">XEP</li>
+                    </ul>
+
+                    <li>Delphi</li>
+                    <ul>
+                        <li id="bat-list">The Bat!</li>
+                    </ul>
+                </ul>
+            </section>
+
             <section id="browsers_table" style="width: 80%; margin-left: 10%; text-align: justify">
                 <h2 style="text-align: center">Таблица сравнения наиболее популярных браузеров.</h2>
                 <table>
                     <tr>
-                        <th colspan="5">Браузеры на основе Chromium</th>
+                        <th style="background-color: lightgray" colspan="5">Браузеры на основе Chromium</th>
                     </tr>
                     <tr>
                         <td><b>Иконка браузера</b></td>
@@ -112,7 +172,7 @@
                         <td>1800 MB</td>
                     </tr>
                     <tr>
-                        <th colspan="5">Браузеры на основе Blink</th>
+                        <th style="background-color: lightgray" colspan="5">Браузеры на основе Blink</th>
                     </tr>
                     <tr>
                         <td><img style="width: 50px" src="../images/vivaldi_icon.png"></td>
@@ -129,7 +189,7 @@
                         <td>1700 MB</td>
                     </tr>
                     <tr>
-                        <th colspan="5">Браузеры на основе Quantum</th>
+                        <th style="background-color: lightgray" colspan="5">Браузеры на основе Quantum</th>
                     </tr>
                     <tr>
                         <td><img style="width: 50px" src="../images/firefox_icon.svg"></td>
@@ -146,7 +206,7 @@
                         <td>1600 MB</td>
                     </tr>
                     <tr>
-                        <th colspan="5">Браузеры на основе WebKit</th>
+                        <th style="background-color: lightgray" colspan="5">Браузеры на основе WebKit</th>
                     </tr>
                     <tr>
                         <td><img style="width: 50px" src="../images/safari_icon.svg"></td>
