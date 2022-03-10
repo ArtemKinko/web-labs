@@ -20,13 +20,8 @@ footer {
     text-align: right;
     margin-right: 5%;
 }
-
-a:hover {
-    color: darkred;
-}
-
-a:visited {
-    color: #502bff;
+ol a:hover {
+    color: brown;
 }
 
 footer {
