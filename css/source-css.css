@@ -19,11 +19,8 @@ section {
 footer {
     text-align: right;
     margin-right: 5%;
+    background-color: rgb(192, 192, 192);
 }
 ol a:hover {
     color: brown;
-}
-
-footer {
-    background-color: rgb(192, 192, 192);
 }
