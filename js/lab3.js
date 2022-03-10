@@ -8,16 +8,18 @@ arr = [[-1, 2, 3],
 // инициируем переменную суммы
 sum = 0;
 //цикл по строкам
-mainloop: for (i = 0; i < arr.length; i++) {
+for (i = 0; i < arr.length; i++) {
+    hasNegative = 0;
     // временная переменная, сумма всех элементов текущей строки
     row_sum = 0;
     // цикл по столбцам
     for (j = 0; j < arr[i].length; j++) {
         if (arr[i][j] < 0)
-            continue mainloop;
+            hasNegative = 1;
         else
             row_sum += arr[i][j];
     }
-    sum += row_sum;
+    if (!hasNegative)
+        sum += row_sum;
 }
 sum
