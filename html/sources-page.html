@@ -2,6 +2,12 @@
 <link rel="stylesheet" type="text/css" href="../css/source-css.css">
 <html lang="en">
 <head>
+    <script>
+        openInfo = function () {
+            alert("Сайт разработан Кинько Артемом, группа 4931, artem.kinko.edu@gmail.com");
+        }
+    </script>
+
     <meta charset="UTF-8">
     <title>Использованные источники</title>
 </head>
@@ -13,22 +19,24 @@
     </header>
 
     <nav>
-        <h2>Навигация по сайту:</h2>
-        <ul>
-            <li><a href="main-page.html">Историческая справка</a></li>
+            <h2>Навигация по сайту:</h2>
             <ul>
-                <li><a href="main-page.html#web-history">История появления первых веб-браузеров</a></li>
-                <li><a href="main-page.html#first_war">Первая война браузеров</a></li>
-                <li><a href="main-page.html#second_war">Вторая война браузеров</a></li>
+                <li><a href="main-page.html">Историческая справка</a></li>
+                <ul>
+                    <li><a href="main-page.html#web-history">История появления первых веб-браузеров</a></li>
+                    <li><a href="main-page.html#first_war">Первая война браузеров</a></li>
+                    <li><a href="main-page.html#second_war">Вторая война браузеров</a></li>
+                </ul>
+                <li><a href="comparison-page.html">Сравнение браузеров</a></li>
+                <ul>
+                    <li><a href="comparison-page.html#characteristics">Основные характеристики для сравнения</a></li>
+                    <li><a href="comparison-page.html#browsers_table">Таблица сравнения популярных браузеров</a></li>
+                    <li><a href="comparison-page.html#features">Важные функции при выборе браузера</a></li>
+                </ul>
+                <li><a href="task-page.html">Решение задачи поиска минимума</a></li>
+                <li><a href="gallery-page.html">Галерея сайта</a></li>
+                <li><a href="sources-page.html">Использованные источники</a></li>
             </ul>
-            <li><a href="comparison-page.html">Сравнение браузеров</a></li>
-            <ul>
-                <li><a href="comparison-page.html#characteristics">Основные характеристики для сравнения</a></li>
-                <li><a href="comparison-page.html#browsers_table">Таблица сравнения популярных браузеров</a></li>
-                <li><a href="comparison-page.html#features">Важные функции при выборе браузера</a></li>
-            </ul>
-            <li><a href="sources-page.html">Использованные источники</a></li>
-        </ul>
     </nav>
 
     <main>
@@ -52,8 +60,7 @@
 
     <footer>
         <h3><p><a href="#top">Наверх</a></p></h3>
-        <p>Сайт разработан Кинько Артемом</p>
-        <p>artem.kinko.edu@gmail.com</p>
+        <h3><p><a href="#footer" onclick="openInfo()">Об авторе</a></p></h3>
     </footer>
 </body>
 </html>

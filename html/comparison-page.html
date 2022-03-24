@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script>
+            openInfo = function () {
+                alert("Сайт разработан Кинько Артемом, группа 4931, artem.kinko.edu@gmail.com");
+            }
+
+            addNewLine = function () {
+                var obj_table = document.getElementsByTagName("table");
+                var obj_textarea = document.getElementsByTagName("textarea");
+                var obj_newtr = document.createElement("tr");
+
+                var obj_newtd = document.createElement("td");
+                var obj_newButton = document.createElement("button");
+                obj_newButton.addEventListener("click", deleteLine);
+                obj_newButton.textContent = "Удалить";
+                obj_newtd.appendChild(obj_newButton);
+                obj_newtr.appendChild(obj_newtd);
+                for (i = 0; i < 4; i++) {
+                    var obj_newtd = document.createElement("td");
+                    obj_newtd.textContent = obj_textarea[i].value;
+                    obj_newtr.appendChild(obj_newtd);
+                    obj_textarea[i].value = "";
+                }
+                obj_table[0].appendChild(obj_newtr);
+            }
+
+            deleteLine = function (event) {
+                var obj_delLine = event.target.parentElement.parentElement;
+                obj_delLine.parentElement.removeChild(obj_delLine);
+            }
+        </script>
+
         <meta charset="UTF-8">
         <title>Сравнение браузеров</title>
         <style>
@@ -39,7 +70,10 @@
                 background-color: #fdf0d8;
             }
 
-
+            textarea {
+                resize: none;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -64,6 +98,8 @@
                     <li><a href="comparison-page.html#browsers_table">Таблица сравнения популярных браузеров</a></li>
                     <li><a href="comparison-page.html#features">Важные функции при выборе браузера</a></li>
                 </ul>
+                <li><a href="task-page.html">Решение задачи поиска минимума</a></li>
+                <li><a href="gallery-page.html">Галерея сайта</a></li>
                 <li><a href="sources-page.html">Использованные источники</a></li>
             </ul>
         </nav>
@@ -215,6 +251,16 @@
                         <td style="background-color: #d4ffd4"><b>113.997</b></td>
                         <td style="background-color: #d4ffd4"><b>250 MB</b></td>
                     </tr>
+                    <tr>
+                        <th style="background-color: lightgray" colspan="5">Добавьте свои строки в таблицу!</th>
+                    </tr>
+                    <tr>
+                        <td><button onclick="addNewLine()">Добавить</button></td>
+                        <td><textarea></textarea></td>
+                        <td><textarea></textarea></td>
+                        <td><textarea></textarea></td>
+                        <td><textarea></textarea></td>
+                    </tr>
                 </table><br>
             </section>
 
@@ -255,8 +301,7 @@
 
         <footer style="text-align: right; margin-right: 5%">
             <h3><p><a href="#top">Наверх</a></p></h3>
-            <p>Сайт разработан Кинько Артемом</p>
-            <p>artem.kinko.edu@gmail.com</p>
+            <h3><p><a href="#footer" onclick="openInfo()">Об авторе</a></p></h3>
         </footer>
     </body>
 </html>

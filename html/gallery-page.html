@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        openInfo = function () {
+            alert("Сайт разработан Кинько Артемом, группа 4931, artem.kinko.edu@gmail.com");
+        }
+
+        changeImageSize = function () {
+            var obj_input = document.getElementsByTagName("input")[0];
+            var obj_main = document.getElementsByTagName("main")[0];
+            var obj_image = document.getElementsByTagName("img")[1];
+            obj_image.style.width = obj_input.value + "px";
+            obj_main.style.height = parseInt(obj_input.value) + 200 + "px";
+        }
+
+        var imagePos = 1;
+
+        changeImage = function() {
+            var images = ["adblock.png",
+                "browser_wars.svg",
+                "chrome-icon.svg",
+                "chrome_and_ram.jpg"];
+
+            var desc = ["Иконка блокировщика рекламы adblock",
+                "График популярности браузеров во время первой войны браузеров",
+                "Иконка браузера Google Chrome",
+                "Рисунок, где браузер Chrome стилизован под пакмана, а вместо точек - планки оперативной памяти"]
+
+            var obj = document.getElementsByTagName("img")[1]
+            obj.onmouseover = function() {};
+
+            var start = Date.now();
+            var timer = setInterval(function() {
+                let timePassed = Date.now() - start;
+                if (timePassed >= 250) {
+                    clearInterval(timer);
+                    return;
+                }
+                changeOpacity(timePassed);
+            }, 20);
+
+            function changeOpacity(timePassed) {
+                obj.style.opacity = timePassed / 2.5 + '%';
+            }
+
+            obj.src = "../images/" + images[imagePos];
+
+            document.getElementsByTagName("p")[1].textContent = desc[imagePos];
+
+            imagePos++;
+            if (imagePos === images.length)
+                imagePos = 0;
+
+            setTimeout(changeImage, 3000);
+        }
+    </script>
+
+    <style>
+        footer {
+            background-color: rgb(192, 192, 192);
+        }
+        main {
+            text-align: center;
+            height: 800px;
+        }
+
+        main img {
+            width: 600px;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Галерея изображений</title>
+
+</head>
+
+<body>
+    <header style="text-align: center" >
+        <p><a name="top"></a></p>
+        <img src="../images/logo_with_title.png" alt="logo_with_title">
+        <h1>Конкуренция браузеров. Галерея изображений.</h1> <br>
+    </header>
+
+    <nav style="margin-left: 10%">
+        <h2>Навигация по сайту:</h2>
+        <ul>
+            <li><a href="main-page.html">Историческая справка</a></li>
+            <ul>
+                <li><a href="main-page.html#web-history">История появления первых веб-браузеров</a></li>
+                <li><a href="main-page.html#first_war">Первая война браузеров</a></li>
+                <li><a href="main-page.html#second_war">Вторая война браузеров</a></li>
+            </ul>
+            <li><a href="comparison-page.html">Сравнение браузеров</a></li>
+            <ul>
+                <li><a href="comparison-page.html#characteristics">Основные характеристики для сравнения</a></li>
+                <li><a href="comparison-page.html#browsers_table">Таблица сравнения популярных браузеров</a></li>
+                <li><a href="comparison-page.html#features">Важные функции при выборе браузера</a></li>
+            </ul>
+            <li><a href="task-page.html">Решение задачи поиска минимума</a></li>
+            <li><a href="gallery-page.html">Галерея сайта</a></li>
+            <li><a href="sources-page.html">Использованные источники</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <br><br>
+        <h3>Наведите курсор на изображение для запуска прокрутки галереи</h3>
+        <br><br>
+        <i>Измените размер изображения:</i>
+        <input oninput="changeImageSize()" type="range" min="200" max="800" value="600"/><br><br>
+        <img onmouseover="changeImage()" src="../images/adblock.png">
+        <i><p>Иконка блокировщика рекламы adblock</p></i>
+    </main>
+
+    <footer style="text-align: right; margin-right: 5%">
+        <h3><p><a href="#top">Наверх</a></p></h3>
+        <h3><p><a href="#footer" onclick="openInfo()">Об авторе</a></p></h3>
+    </footer>
+</body>
+</html>

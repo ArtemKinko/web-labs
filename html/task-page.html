@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        openInfo = function () {
+            alert("Сайт разработан Кинько Артемом, группа 4931, artem.kinko.edu@gmail.com");
+        }
+
+        solveTask = function (param) {
+            var arr = [];
+            if (param === 1) {
+                var str = prompt("Введите квадратную матрицу, разделяя строки символом '|', а числа пробелом. Пример: 1 2|2 -3");
+                var temparr = str.split("|");
+                for (i = 0; i < temparr.length; i++) {
+                    tempsubarr = temparr[i].split(" ");
+                    var subarr = [];
+                    for (j = 0; j < tempsubarr.length; j++)
+                        subarr.push(parseInt(tempsubarr[j]));
+                    arr.push(subarr);
+                }
+
+            } else arr = [[-1, 2, 3],
+                [4, 5, 6],
+                [7, 8, -9]];
+            sum = 0;
+            for (i = 0; i < arr.length; i++) {
+                hasNegative = 0;
+                row_sum = 0;
+                for (j = 0; j < arr[i].length; j++) {
+                    if (arr[i][j] < 0)
+                        hasNegative = 1;
+                    else
+                        row_sum += arr[i][j];
+                }
+                if (!hasNegative)
+                    sum += row_sum;
+            }
+            var result = document.getElementsByTagName("p")[1];
+            result.textContent = sum;
+            result.style.color = "green";
+
+
+            var array = document.getElementsByTagName("ul")[3];
+            array.textContent = "";
+
+            for (i = 0; i < arr.length; i++) {
+                var temp_li = document.createElement("li");
+                temp_li.setAttribute("id", "temp_id");
+                var temp = "";
+                for (j = 0; j < arr.length; j++)
+                    temp += arr[i][j] + "\t";
+                temp_li.textContent = temp;
+                array.append(temp_li);
+            }
+        }
+    </script>
+
+    <style>
+        footer {
+            background-color: rgb(192, 192, 192);
+        }
+        main {
+            text-align: center;
+            height: 750px;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Решение задачи поиска минимума</title>
+
+</head>
+
+<body>
+<header style="text-align: center" >
+    <p><a name="top"></a></p>
+    <img src="../images/logo_with_title.png" alt="logo_with_title">
+    <h1>Решение задачи поиска минимума.</h1> <br>
+</header>
+
+<nav style="margin-left: 10%">
+    <h2>Навигация по сайту:</h2>
+    <ul>
+        <li><a href="main-page.html">Историческая справка</a></li>
+        <ul>
+            <li><a href="main-page.html#web-history">История появления первых веб-браузеров</a></li>
+            <li><a href="main-page.html#first_war">Первая война браузеров</a></li>
+            <li><a href="main-page.html#second_war">Вторая война браузеров</a></li>
+        </ul>
+        <li><a href="comparison-page.html">Сравнение браузеров</a></li>
+        <ul>
+            <li><a href="comparison-page.html#characteristics">Основные характеристики для сравнения</a></li>
+            <li><a href="comparison-page.html#browsers_table">Таблица сравнения популярных браузеров</a></li>
+            <li><a href="comparison-page.html#features">Важные функции при выборе браузера</a></li>
+        </ul>
+        <li><a href="task-page.html">Решение задачи поиска минимума</a></li>
+        <li><a href="gallery-page.html">Галерея сайта</a></li>
+        <li><a href="sources-page.html">Использованные источники</a></li>
+    </ul>
+</nav>
+
+<main>
+    <br><br>
+    <h3>Постановка задачи</h3>
+    <i>В матрице найти сумму элементов строк, в которых нет отрицательных элементов.</i><br><br>
+    <button onclick="solveTask(0)">Использовать предустановленные данные</button>
+    <button onclick="solveTask(1)">Ввести данные самостоятельно</button><br><br>
+    <h3>Результаты работы</h3>
+    <i>Исходная матрица:</i>
+    <b><ul style="list-style: none; margin-left: -40px; color: darkred">Кажется, задача еще не была решена...</ul></b><br><br>
+    <i>Результат выполнения функции:</i><br>
+    <b><p style="color: darkred;">...</p></b>
+</main>
+
+<footer style="text-align: right; margin-right: 5%">
+    <h3><p><a href="#top">Наверх</a></p></h3>
+    <h3><p><a href="#footer" onclick="openInfo()">Об авторе</a></p></h3>
+</footer>
+</body>
+</html>
