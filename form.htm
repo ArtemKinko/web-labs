@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Обратная связь</title>
+    <script>
+        openInfo = function () {
+            alert("Сайт разработан Кинько Артемом, группа 4931, artem.kinko.edu@gmail.com");
+        }
+        showOrHidePages = function () {
+            if (document.getElementById("select").value === "Отзыв") {
+                document.getElementById("li_pages").style.visibility = "hidden";
+                document.getElementById("check_history").checked = false;
+                document.getElementById("check_comparison").checked = false;
+                document.getElementById("check_solve").checked = false;
+                document.getElementById("check_gallery").checked = false;
+                document.getElementById("check_sources").checked = false;
+            }
+            else
+                document.getElementById("li_pages").style.visibility = "visible";
+        }
+    </script>
+    <style>
+        table {
+            width: 100%;
+        }
+        footer {
+            background-color: rgb(192, 192, 192);
+        }
+
+        form {
+            margin: 0 auto;
+            width: 400px;
+            padding: 1em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+        }
+
+        form ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        form li + li {
+            margin-top: 1em;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+        }
+
+        input,
+        textarea,
+        select {
+            font: 14px sans-serif;
+            width: 270px;
+            box-sizing: border-box;
+            border: 1px solid #999;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #000;
+        }
+
+        textarea {
+            vertical-align: top;
+            height: 5em;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <header style="text-align: center" >
+        <p><a name="top"></a></p>
+        <img src="images/logo_with_title.png" alt="logo_with_title">
+        <h1>Конкуренция браузеров. Обратная связь.</h1> <br>
+    </header>
+
+    <nav style="margin-left: 10%">
+        <h2>Навигация по сайту:</h2>
+        <ul>
+            <li><a href="html/main-page.html">Историческая справка</a></li>
+            <ul>
+                <li><a href="html/main-page.html#web-history">История появления первых веб-браузеров</a></li>
+                <li><a href="html/main-page.html#first_war">Первая война браузеров</a></li>
+                <li><a href="html/main-page.html#second_war">Вторая война браузеров</a></li>
+            </ul>
+            <li><a href="html/comparison-page.html">Сравнение браузеров</a></li>
+            <ul>
+                <li><a href="html/comparison-page.html#characteristics">Основные характеристики для сравнения</a></li>
+                <li><a href="html/comparison-page.html#browsers_table">Таблица сравнения популярных браузеров</a></li>
+                <li><a href="html/comparison-page.html#features">Важные функции при выборе браузера</a></li>
+            </ul>
+            <li><a href="html/task-page.html">Решение задачи поиска минимума</a></li>
+            <li><a href="form.htm">Обратная связь</a></li>
+            <li><a href="html/gallery-page.html">Галерея сайта</a></li>
+            <li><a href="html/sources-page.html">Использованные источники</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <br><br>
+        <h2 style="text-align: center">Форма для обратной связи</h2>
+        <form action="/cgi-bin/feedback.py" method="get">
+            <ul>
+                <li>
+                    <label for="name">ФИО:</label>
+                    <input required type="text" id="name" name="user_name">
+                </li>
+                <li>
+                    <label for="mail">Почта:</label>
+                    <input required type="email" id="mail" name="user_mail">
+                </li>
+                <li>
+                    <label for="msg">Тип сообщения:</label>
+                    <select name="user_type" oninput="showOrHidePages()" id="select">
+                        <option value="Отзыв" id="option_feedback">Отзыв</option>
+                        <option value="Сообщение об ошибках" id="option_bug">Сообщение об ошибках</option>
+                        <option value="Проблема" id="option_problem">Проблема</option>
+                    </select>
+                </li>
+                <li>
+                    <label>Получить ответ на почту?</label>
+                        <input value="yes" style="width: 15px" type="radio" id="radio_yes" name="feedback">
+                        <label style="width: 20px" for="radio_yes"> Да</label>
+                        <input value="no" checked style="width: 15px" type="radio" id="radio_no" name="feedback">
+                        <label style="width: 20px" for="radio_yes"> Нет</label>
+                </li>
+                <li>
+                    <label for="msg">Сообщение:</label>
+                    <textarea required id="msg" name="user_message"></textarea>
+                </li>
+                <li style="visibility: hidden" id="li_pages">
+                    <label style="position: absolute">На каких страницах возникла проблема?</label>
+                    <input name="pages" value="Историческая справка" style="width: 15px; margin-left: 135px" type="checkbox" id="check_history">
+                    <label style="width: 200px; text-align: left" for="check_history"> Историческая справка</label>
+                    <br>
+                    <input name="pages" value="Сравнение браузеров" style="width: 15px; margin-left: 135px" type="checkbox" id="check_comparison">
+                    <label style="width: 200px; text-align: left" for="check_comparison"> Сравнение браузеров</label>
+                    <br>
+                    <input name="pages" value="Решение задачи" style="width: 15px; margin-left: 135px" type="checkbox" id="check_solve">
+                    <label style="width: 200px; text-align: left" for="check_solve"> Решение задачи</label>
+                    <br>
+                    <input name="pages" value="Галерея сайта" style="width: 15px; margin-left: 135px" type="checkbox" id="check_gallery">
+                    <label style="width: 200px; text-align: left" for="check_gallery"> Галерея сайта</label>
+                    <br>
+                    <input name="pages" value="Использованые источники" style="width: 15px; margin-left: 135px" type="checkbox" id="check_sources">
+                    <label style="width: 200px; text-align: left" for="check_sources"> Использованные источники</label>
+                </li>
+                <li>
+                    <label style="position: absolute; margin-left: 200px; margin-top: 10px">Отправить сообщение</label>
+                    <input id="send" style="border: #FFF; width: 60px; margin-left: 330px" type="image" src="icons/send_icon.svg">
+                </li>
+            </ul>
+        </form>
+    </main>
+
+    <footer style="text-align: right; margin-right: 5%">
+        <h3><p><a href="#top">Наверх</a></p></h3>
+        <h3><p><a href="#footer" onclick="openInfo()">Об авторе</a></p></h3>
+    </footer>
+</body>
+</html>
